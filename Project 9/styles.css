@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    user-select: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000000;
+    overflow: hidden;
+}
+
+
+.calculator {
+    position: relative;
+    border-radius: 10px;
+    display: grid;
+}
+
+.calculator .value {
+    grid-column: span 4;
+    height: 100px;
+    border: none;
+    text-align: right;
+    outline: none;
+    font-size: 18px;
+    background-color: #000000;
+    color: #fff;
+    text-shadow: 0 0 7px #fff;
+    user-select: none;
+    transition: ease-in-out 0.2s;
+}
+
+.calculator .value:hover {
+    cursor: copy;
+}
+
+.calculator span {
+    position: relative;
+    display: grid;
+    width: 60px;
+    height: 60px;
+    color: rgb(161, 82, 82);
+    background: #1a1a1a;
+    place-items: center;
+    border: #363636;
+    transition: ease-in-out 0.6s;
+}
+
+.calculator span:hover {
+    text-shadow: 0 0 7px rgb(209, 77, 77);
+    font-size: 18.45px;
+}
+
+.calculator span.clear {
+    grid-column: span 2;
+    width: 100%;
+    background-color: rgb(161, 82, 82);
+    color: #fff;
+    transition: ease-in-out 0.5s;
+}
+
+.calculator span.clear:hover {
+    text-shadow: 0 0 7px #fff;
+}
+
+.calculator span.plus {
+    grid-row: span 2;
+    height: 120px;
+}
+
+.calculator span.equal {
+    background-color: rgb(43, 43, 43);
+    color: #fff;
+    transition: ease-in-out 0.2s;
+}
+
+.calculator span.equal:hover {
+    text-shadow: 0 0 7px #fff;
+}
+
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 120px;
+    height: 120px;
+    margin: -76px 0 0 -76px;
+    border: 16px solid #1a1a1a;
+    filter: alpha(opacity=60);
+    border-radius: 50%;
+    border-top: 16px solid rgb(161, 82, 82);
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+    from {
+        bottom: -100px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 0px;
+        opacity: 1
+    }
+}
+
+@keyframes animatebottom {
+    from {
+        bottom: -100px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+#myDiv {
+    display: none;
+    text-align: center;
+}
